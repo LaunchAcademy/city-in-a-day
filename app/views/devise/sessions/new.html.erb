@@ -1,26 +1,24 @@
-<h2>Log in</h2>
+<link rel="stylesheet" href="signin" />
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<img src="https://static.pexels.com/photos/2855/landscape-mountains-nature-lake.jpg" alt="" />
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+<div class="container">
+  <div class='login'><%="LOGIN"%></div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email, required: true, placeholder: 'Fill in Username', label: false %>
+      <%= f.input :password, required: true, placeholder: 'Fill in Password', label: false %>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign In" %>
+    </div>
+  <% end %>
+
+  <div class="other">
+    <%= render "devise/shared/links" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

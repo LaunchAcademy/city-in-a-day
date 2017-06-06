@@ -1,0 +1,42 @@
+<div class="trail-container">
+  <div class="trail-details">
+
+    <div class="trail-image">
+      <%= image_tag @trail.trail_photo.to_s if !@trail.trail_photo.nil? %>
+    </div>
+
+    <div class="users-name">
+      <%= link_to "Added By: #{@user.first_name} #{@user.last_name}", profile_path(@user.id) %>
+    </div>
+
+    <div class="trail-identity">
+      <%= @trail.name %><br/>
+      <%= @trail.mood %>
+    </div>
+
+    <div id="location-information">
+      <% @locations.each_with_index do |location, index| %>
+          <ul>
+            <%= "#{index + 1}. #{location.name}" %>
+            <%= "#{location.location}" %>
+            <%= "#{location.description}" %>
+            <%= "#{location.price}" %>
+            <% if !current_user.nil? && current_user.id == @trail.user_id %>
+              <%= link_to "Edit Location", edit_trail_location_path(location) %>
+            <% end %>
+          </ul>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="line-separator"></div>
+
+  <div class="comment-container">
+    <%= render 'comment_form' %>
+      <% if !@comments.nil? %>
+        <% @comments.each do |comment| %>
+          <%= comment.description %>
+        <% end %>
+      <% end %>
+  </div>
+</div>

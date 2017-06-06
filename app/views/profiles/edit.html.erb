@@ -1,0 +1,7 @@
+<div class="editing-container">
+  <%= simple_form_for(@user, url: profile_path(@user)) do |f| %>
+  <%= f.input :profile_photo, type: :file %>
+  <%= f.input :bio, label: 'Bio' %>
+  <%= f.submit 'Update' %>
+  <% end %>
+</div>

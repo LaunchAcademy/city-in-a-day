@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="home" />
+
+<div class="cover-photo">
+  <img src="http://img.wallpaperfolder.com/f/7BF46E1A77AE/new-york-usa-manhattan-city.jpg" alt="" />
+  <div id="text">Where to Next?</div>
+</div>
+
+<div class="search-feature">
+  <%= form_tag trails_path, method: "get" do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", name: nil %>
+  <% end %>
+</div>
+
+<div class="featured-trails">
+  <p>FEATURED TRAILS</p>
+
+  <% if !@all_trails.nil? %>
+    <% @all_trails.each do |trail| %>
+      <div class="image"><%= image_tag trail.trail_photo.to_s if !trail.trail_photo.nil? %>
+        <div class="name"><%= link_to trail.name, trail_path(trail.id) %></div>
+          <%= simple_form_for @favorite do |f| %>
+            <%= f.input :trail_id, as: :hidden, input_html: { value: trail.id } %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+    <% end %>
+  <% end %>
+
+<% if !@trails.nil? && !@trails.empty? %>
+  <% @trails.each do |trail| %>
+    <%= link_to trail.name, trail_path(trail.id) %>
+  <% end %>
+<% else %>
+  <%= @error %>
+<% end %>
+
+
+<div class="form">
+  <h1><%= link_to 'Share Your Own Adventure', new_trail_path %></h1>
+</div>
+
+<div id="about-us">
+  <h2> <%= "Ever been passing through a city & want to explore it, but you're only there for one day? We've been there & we've got you..."%></h2>
+  <div class="video">
+    <iframe src="https://player.vimeo.com/video/118781912" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <a href="https://vimeo.com/118781912">City in a Day - Welcome to the Adventure</a> from <a href="https://vimeo.com/cityinaday">City In A Day</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+  </div>
+  <div class="about-us-text">
+    <%= "City in a Day is a social platform that allows people to share one day adventures of the cities they love." %>
+  </div>
+</div>

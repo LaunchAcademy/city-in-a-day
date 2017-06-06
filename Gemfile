@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -11,6 +10,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'simple_form'
+gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+gem "fog"
+gem 'gmaps4rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -18,9 +20,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
+  gem 'dotenv-rails'
+  gem 'selenium-webdriver'
 end
 
 group :development do

@@ -1,0 +1,123 @@
+html {
+  margin-bottom: 0px;
+}
+.cover-photo img {
+  position: relative;
+  margin-top: 40px;
+  height: 500px;
+  width: 100%;
+  z-index: 0;
+}
+
+#text {
+  background-color: #fff;
+  color: #121212;
+  border: 1px;
+  border-radius: 40px;
+  font-family: Gotham SSm, sans-serif;
+  font-size: 20px;
+  letter-spacing: .5em;
+  line-height: 1em;
+  padding: 1.5em 2.5em;
+  text-align: center;
+  margin-top: -240px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.featured-trails {
+  background-color: #FDFFFC;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.featured-trails p {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  letter-spacing: .5em;
+  line-height: 1em;
+}
+
+.image {
+  display: inline-block;
+  margin-left: 200px;
+  align-self: auto;
+}
+
+
+.image img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: block;
+}
+
+.image .name a {
+  text-align: center;
+}
+
+.form {
+  background-color: #EFEFEF;
+  margin-top: 100px;
+  padding: 120px;
+}
+
+.form h1 {
+  margin: auto;
+  width: 35%;
+  border: 5px solid black;
+  background-color: black;
+  text-align: center;
+  font-family: "Raleway";
+  font-style: normal;
+  padding: 40px;
+}
+
+.form h1 a {
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  font-weight: 500;
+}
+
+#about-us {
+  margin: 60px 20px;
+  width: 100%;
+}
+
+#about-us h2 {
+  width: 45%;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  font-family: "Raleway";
+  font-size: 32px;
+  line-height: 1.3em;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.video {
+  margin-left: 20px;
+  width: 50%;
+  display: inline-block;
+}
+
+.about-us-text {
+  width: 40%;
+  margin-top: 140px;
+  margin-right: 50px;
+  text-align: center;
+  font-family: "Raleway";
+  font-size: 32px;
+  line-height: 1.3em;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: 600;
+  font-style: normal;
+
+  float: right;
+}
